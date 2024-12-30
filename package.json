@@ -1,7 +1,24 @@
 {
   "name": "define",
   "version": "0.1.0",
+  "description": "",
   "private": true,
+  "keywords": [
+    "dictionary",
+    "vocabulary",
+    "definitions",
+    "words",
+    "english",
+    "react",
+    "words"
+  ],
+  "author": {
+    "name": "Aniqa",
+    "email": "hello@aniqa.dev",
+    "url": "https://aniqa.dev"
+  },
+  "homepage": "",
+  "repository": "",
   "dependencies": {
     "@radix-ui/react-select": "^2.1.4",
     "cra-template": "1.2.0",
@@ -13,9 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
