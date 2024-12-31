@@ -16,7 +16,7 @@ function FontSelect() {
                 border border-gray-200
                 hover:bg-gray-50"
             >
-                <Select.Value placeholder="Select Font" />
+                <Select.Value />
                 <Select.Icon>
                     <ChevronDown strokeWidth={1.6} size={18} />
                 </Select.Icon>

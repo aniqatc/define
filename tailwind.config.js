@@ -9,10 +9,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
-          "Reddit Sans",
+          '"Reddit Sans"',
           "system-ui",
           "-apple-system",
-          "Nunito",
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
@@ -20,7 +19,7 @@ module.exports = {
           "sans-serif"
         ],
         serif: [
-          "Source Serif",
+          '"Source Serif 4"',
           "Georgia",
           "Cambria",
           "Times New Roman",
@@ -28,7 +27,7 @@ module.exports = {
           "serif"
         ],
         mono: [
-          "Reddit Mono",
+          '"Reddit Mono"',
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",
