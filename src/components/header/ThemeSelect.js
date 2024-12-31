@@ -24,7 +24,7 @@ function ThemeSelect() {
         <Select.Root defaultValue="light">
             <Select.Trigger
                 className="inline-flex items-center justify-between rounded-md px-3 py-1 gap-2 h-8
-                bg-white
+                bg-white shadow-sm
                 border border-gray-200
                 hover:bg-gray-50"
             >

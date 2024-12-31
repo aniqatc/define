@@ -12,7 +12,7 @@ function FontSelect() {
         <Select.Root defaultValue="sans">
             <Select.Trigger
                 className="inline-flex items-center justify-between rounded-md px-3 py-1 text-sm gap-2 h-8
-                bg-white
+                bg-white shadow-sm
                 border border-gray-200
                 hover:bg-gray-50"
             >
