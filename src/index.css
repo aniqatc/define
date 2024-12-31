@@ -7,5 +7,5 @@ html {
 }
 
 body {
-  @apply h-full antialiased scroll-smooth m-0;
+  @apply h-full antialiased scroll-smooth m-0 bg-gray-100 text-gray-900;
 }
