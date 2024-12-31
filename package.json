@@ -1,7 +1,7 @@
 {
   "name": "define",
   "version": "0.1.0",
-  "description": "",
+  "description": "A modern dictionary app with customizable themes for a personalized experience.",
   "private": true,
   "keywords": [
     "dictionary",
@@ -9,8 +9,7 @@
     "definitions",
     "words",
     "english",
-    "react",
-    "words"
+    "react"
   ],
   "author": {
     "name": "Aniqa",
@@ -18,7 +17,7 @@
     "url": "https://aniqa.dev"
   },
   "homepage": "",
-  "repository": "",
+  "repository": "https://github.com/aniqatc/define",
   "dependencies": {
     "@radix-ui/react-select": "^2.1.4",
     "cra-template": "1.2.0",
