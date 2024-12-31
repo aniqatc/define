@@ -6,7 +6,7 @@ function SearchInput() {
             <input type="text" className="w-full px-2 py-1 rounded-md bg-white border border-gray-200 shadow-sm placeholder:text-sm"
                    placeholder="Type a word to define..."/>
             <button type="submit" className="px-2 py-1 rounded-md border border-gray-200 shadow-sm flex justify-between items-center gap-1">
-                Search <Search strokeWidth={2} size={20}/>
+                Search <Search strokeWidth={2} size={18}/>
             </button>
         </form>
     )
