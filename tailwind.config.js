@@ -20,7 +20,7 @@ module.exports = {
           "sans-serif"
         ],
         serif: [
-          "Source Serif 4",
+          "Source Serif",
           "Georgia",
           "Cambria",
           "Times New Roman",

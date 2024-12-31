@@ -7,28 +7,28 @@ const themes = [
     },
     {
         value: 'dark',
-        icon: <div className="w-4 h-4 rounded-full bg-gray-900 border border-gray-700" />
+        icon: <div className="w-4 h-4 rounded-full bg-gray-600 border border-gray-900" />
     },
     {
         value: 'sepia',
-        icon: <div className="w-4 h-4 rounded-full bg-amber-50 border border-amber-200" />
+        icon: <div className="w-4 h-4 rounded-full bg-pink-50 border border-pink-200" />
     },
     {
         value: 'ocean',
-        icon: <div className="w-4 h-4 rounded-full bg-blue-900 border border-blue-700" />
+        icon: <div className="w-4 h-4 rounded-full bg-blue-300 border border-blue-700" />
     }
 ];
 
-function ThemeOptions() {
+function ThemeSelect() {
     return (
         <Select.Root defaultValue="light">
             <Select.Trigger
-                className="inline-flex items-center justify-between rounded-md px-3 py-1 gap-2 h-7
+                className="inline-flex items-center justify-between rounded-md px-3 py-1 gap-2 h-8
                 bg-white
                 border border-gray-200
                 hover:bg-gray-50"
             >
-                {themes.find(theme => theme.value === 'light').icon}
+                <Select.Value />
             </Select.Trigger>
 
             <Select.Portal>
@@ -36,7 +36,6 @@ function ThemeOptions() {
                     className="overflow-hidden bg-white
                     rounded-md shadow-lg
                     border border-gray-200"
-                    position="popper"
                 >
                     <Select.Viewport>
                         <Select.Group>
@@ -46,9 +45,13 @@ function ThemeOptions() {
                                     value={theme.value}
                                     className="relative flex items-center px-3 py-2 text-sm
                                     hover:bg-gray-100
-                                    cursor-default"
+                                    cursor-default
+                                    data-[highlighted]:bg-gray-100
+                                    data-[state=checked]:bg-gray-200"
                                 >
-                                    {theme.icon}
+                                    <Select.ItemText>
+                                        {theme.icon}
+                                    </Select.ItemText>
                                 </Select.Item>
                             ))}
                         </Select.Group>
@@ -59,4 +62,4 @@ function ThemeOptions() {
     )
 }
 
-export default ThemeOptions;
+export default ThemeSelect;

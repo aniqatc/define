@@ -1,11 +1,11 @@
 import Logo from './Logo';
-import OptionsWrapper from './OptionsWrapper';
+import SelectGroup from "./SelectGroup";
 
 function Header() {
     return (
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full my-3">
             <Logo />
-            <OptionsWrapper />
+            <SelectGroup />
         </div>
     )
 }

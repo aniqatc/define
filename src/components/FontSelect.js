@@ -7,11 +7,11 @@ const fonts = [
     { value: 'mono', label: 'Mono' }
 ];
 
-function FontOptions() {
+function FontSelect() {
     return (
         <Select.Root defaultValue="sans">
             <Select.Trigger
-                className="inline-flex items-center justify-between rounded-md px-3 py-1 text-sm gap-2 h-7
+                className="inline-flex items-center justify-between rounded-md px-3 py-1 text-sm gap-2 h-8
                 bg-white
                 border border-gray-200
                 hover:bg-gray-50"
@@ -38,9 +38,13 @@ function FontOptions() {
                                         relative flex items-center pl-7 py-1 text-sm 
                                         hover:bg-gray-100
                                         cursor-default font-${font.value}
+                                        data-[highlighted]:bg-gray-100
+                                        data-[state=checked]:bg-gray-200
                                     `}
                                 >
-                                    <Select.ItemText>{font.label}</Select.ItemText>
+                                    <Select.ItemText>
+                                        <span className={`font-${font.value}`}>{font.label}</span>
+                                    </Select.ItemText>
                                     <Select.ItemIndicator
                                         className="absolute left-2 inline-flex items-center"
                                     >
@@ -56,4 +60,4 @@ function FontOptions() {
     )
 }
 
-export default FontOptions;
+export default FontSelect;
