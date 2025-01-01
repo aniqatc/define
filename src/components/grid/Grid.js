@@ -16,11 +16,12 @@ function Grid({ data, images, onSearch }) {
             example: def.example
                 ? `"${def.example}"`
                 : `I couldn't find an example of '${data.word}' used as a ${meaning.partOfSpeech} for this definition.`,
-            isDefaultExample: !def.example
-        })).slice(0, 3)
+            isDefaultExample: !def.example,
+            priority: def.example ? 1 : 0 // priority given to examples provided by API
+        }))
     );
-    const completeDefs = definitions.filter(def => def.partOfSpeech && def.definition && def.example).slice(0, 3);
-    const defsToRender = completeDefs.length > 0 ? completeDefs : definitions;
+    const sortedDefinitions = definitions.sort((a, b) => b.priority - a.priority);
+    const defsToRender = sortedDefinitions.slice(0, 3);
 
     const synonyms = data.meanings.flatMap(meaning => meaning.synonyms || []);
     const antonyms = data.meanings.flatMap(meaning => meaning.antonyms || []);
