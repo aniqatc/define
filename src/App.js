@@ -13,20 +13,18 @@ function App() {
     const [data, setData] = useState(null);
     const [images, setImages] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const wordContent = await fetchWordData("cheese");
-                const imageContent = await fetchImages("cheese");
-                setData(wordContent);
-                setImages(imageContent);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchData();
-    }, [word]);
+    function handleSearch(userInput) {
+        setWord(userInput);
+    }
 
+    useEffect(() => {
+        fetchWordData(word).then((data) => {
+            setData(data);
+            return fetchImages(word);
+        }).then((images) => {
+            setImages(images);
+        });
+    }, [word]);
 
     return (
         <motion.div
@@ -51,25 +49,25 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="w-full"
             >
-                <SearchContainer />
+                <SearchContainer onSearch={handleSearch} />
             </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.75 }}
+            {word && <motion.div
+                initial={{opacity: 0, y: 30}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 0.75}}
                 className="w-full"
             >
-                <Grid data={data} images={images} />
-            </motion.div>
+                <Grid data={data} images={images}/>
+            </motion.div>}
 
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
+                initial={{opacity: 0, y: 30}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 1.0}}
                 className="w-full"
             >
-                <Footer source={data?.sourceUrls} />
+                <Footer source={data?.sourceUrls}/>
             </motion.div>
         </motion.div>
     );

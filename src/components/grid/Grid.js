@@ -13,15 +13,14 @@ function Grid({ data, images }) {
             definition: def.definition,
             example: def.example
                 ? `"${def.example}"`
-                : `I couldn't find an example of '${data.word}' used as a ${meaning.partOfSpeech}.`
+                : `I couldn't find an example of '${data.word}' used as a ${meaning.partOfSpeech} for this definition.`
         })).slice(0, 3)
     );
-
     const completeDefs = definitions.filter(def => def.partOfSpeech && def.definition && def.example).slice(0, 3);
     const defsToRender = completeDefs.length > 0 ? completeDefs : definitions;
+
     const synonyms = data.meanings.flatMap(meaning => meaning.synonyms || []);
     const antonyms = data.meanings.flatMap(meaning => meaning.antonyms || []);
-    console.log(images);
 
     return (
         <div className="mt-3 w-full flex flex-col gap-2">

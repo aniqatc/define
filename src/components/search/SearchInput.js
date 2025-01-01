@@ -1,8 +1,19 @@
 import { Search } from 'lucide-react';
+import { useState } from 'react';
 
-function SearchInput() {
+function SearchInput({ onSearch }) {
+    const [word, setWord] = useState("");
+
+    function handleSearch(event) {
+        event.preventDefault();
+        if (word.trim()) {
+            onSearch(word);
+            setWord("");
+        }
+    }
+
     return (
-        <form className="w-full flex items-center gap-2">
+        <form className="w-full flex items-center gap-2" onSubmit={handleSearch}>
             <input
                 type="text"
                 className="w-full h-full px-2 py-1 rounded-md
@@ -10,6 +21,8 @@ function SearchInput() {
                     placeholder:text-sm
                     focus:outline-none focus:ring-1 focus:ring-slate-300"
                 placeholder="Type a word to define..."
+                value={word}
+                onChange={(event) => setWord(event.target.value)}
             />
             <button
                 type="submit"
