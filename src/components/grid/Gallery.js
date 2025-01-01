@@ -1,5 +1,9 @@
 import BaseCard from './BaseCard';
 
-function Gallery() {}
+function Gallery() {
+    return (
+        <></>
+    )
+}
 
 export default Gallery;

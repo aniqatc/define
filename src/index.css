@@ -7,5 +7,17 @@ html {
 }
 
 body {
-  @apply h-full antialiased scroll-smooth m-0 bg-gray-100 text-gray-900;
+  @apply h-full antialiased scroll-smooth m-0 bg-slate-50 text-gray-900;
+}
+
+*:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+[data-radix-popper-content-wrapper] {
+  outline: none !important;
 }

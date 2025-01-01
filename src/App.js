@@ -1,8 +1,7 @@
-import './App.css';
-
 import Header from './components/header/Header';
 import SearchContainer from './components/search/SearchContainer';
 import Grid from './components/grid/Grid';
+import Footer from "./components/footer/Footer"
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
         <Header />
         <SearchContainer />
         <Grid />
-        {/* Footer => Attributions */}
+        <Footer />
     </div>
   );
 }

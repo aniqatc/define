@@ -37,7 +37,7 @@ function FontSelect() {
                                     className={`
                                         relative flex items-center pl-7 py-1 text-sm 
                                         hover:bg-gray-100
-                                        cursor-default font-${font.value}
+                                        cursor-pointer font-${font.value}
                                         data-[highlighted]:bg-gray-100
                                         data-[state=checked]:bg-gray-200
                                     `}

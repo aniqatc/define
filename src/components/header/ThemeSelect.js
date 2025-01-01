@@ -3,19 +3,19 @@ import * as Select from "@radix-ui/react-select";
 const themes = [
     {
         value: 'light',
-        icon: <div className="w-4 h-4 rounded-full bg-white border border-gray-200" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-slate-300 border border-slate-400" />
     },
     {
         value: 'dark',
-        icon: <div className="w-4 h-4 rounded-full bg-gray-600 border border-gray-900" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-gray-600 border border-gray-900" />
     },
     {
         value: 'sepia',
-        icon: <div className="w-4 h-4 rounded-full bg-pink-50 border border-pink-200" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-pink-50 border border-pink-200" />
     },
     {
         value: 'ocean',
-        icon: <div className="w-4 h-4 rounded-full bg-blue-300 border border-blue-700" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-blue-300 border border-blue-700" />
     }
 ];
 
@@ -45,7 +45,7 @@ function ThemeSelect() {
                                     value={theme.value}
                                     className="relative flex items-center px-3 py-2 text-sm
                                     hover:bg-gray-100
-                                    cursor-default
+                                    cursor-pointer
                                     data-[highlighted]:bg-gray-100
                                     data-[state=checked]:bg-gray-200"
                                 >
