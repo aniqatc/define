@@ -9,20 +9,28 @@ import Footer from './components/footer/Footer';
 import { fetchWordData, fetchImages } from "./data/api";
 
 function App() {
-    const [word, setWord] = useState(null);
+    const [word, setWord] = useState('');
     const [data, setData] = useState(null);
     const [images, setImages] = useState([]);
 
     function handleSearch(userInput) {
         setWord(userInput);
+
+        // Reset states after a new search
+        setData(null);
+        setImages([]);
     }
 
     useEffect(() => {
+        if (!word) return;
+
         fetchWordData(word).then((data) => {
             setData(data);
             return fetchImages(word);
         }).then((images) => {
             setImages(images);
+        }).catch((error) => {
+            console.log(error);
         });
     }, [word]);
 
@@ -58,7 +66,7 @@ function App() {
                 transition={{duration: 0.5, delay: 0.75}}
                 className="w-full"
             >
-                <Grid data={data} images={images}/>
+                <Grid data={data} images={images} onSearch={handleSearch} />
             </motion.div>}
 
             <motion.div
@@ -67,7 +75,7 @@ function App() {
                 transition={{duration: 0.5, delay: 1.0}}
                 className="w-full"
             >
-                <Footer source={data?.sourceUrls}/>
+                <Footer source={data?.sourceUrls} />
             </motion.div>
         </motion.div>
     );

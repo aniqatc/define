@@ -21,3 +21,15 @@ button:focus {
 [data-radix-popper-content-wrapper] {
   outline: none !important;
 }
+
+.font-sans {
+  font-family: 'Reddit Sans', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Source Serif 4', serif;
+}
+
+.font-mono {
+  font-family: 'Reddit Mono', monospace;
+}
