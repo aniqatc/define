@@ -17,7 +17,7 @@ const themes = [
     },
     {
         value: 'forest',
-        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-300 border border-green-500" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-800 border border-green-600" />
     }
 ];
 
@@ -31,7 +31,9 @@ function ThemeSelect() {
                 bg-white shadow-sm
                 border border-gray-200 dark:bg-neutral-900
                 dark:text-neutral-100
-                hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-neutral-700"
+                hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-neutral-700
+                forest:bg-neutral-900
+                forest:hover:bg-neutral-800 forest:border-neutral-800"
             >
                 <Select.Value />
             </Select.Trigger>
@@ -41,7 +43,9 @@ function ThemeSelect() {
                     className="overflow-hidden bg-white
                     rounded-md shadow-lg
                     border border-gray-200 dark:border-neutral-700 dark:bg-neutral-900
-                    dark:text-neutral-100"
+                    dark:text-neutral-100 forest:bg-neutral-900
+                    forest:text-neutral-100
+                    forest:border-neutral-700"
                 >
                     <Select.Viewport>
                         <Select.Group>
@@ -55,7 +59,9 @@ function ThemeSelect() {
                                     data-[highlighted]:bg-gray-100
                                     data-[state=checked]:bg-gray-200
                                     dark:data-[highlighted]:bg-gray-700
-                                    dark:data-[state=checked]:bg-gray-800"
+                                    dark:data-[state=checked]:bg-gray-800
+                                    forest:data-[highlighted]:bg-neutral-800
+                                    forest:data-[state=checked]:bg-gray-950"
                                 >
                                     <Select.ItemText>
                                         {theme.icon}

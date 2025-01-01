@@ -9,7 +9,7 @@ html {
 body {
   @apply h-full antialiased scroll-smooth m-0 bg-slate-50 text-gray-900
   dark:bg-neutral-900 dark:text-gray-100 ocean:bg-blue-50 ocean:text-blue-900
-  forest:text-emerald-900;
+  forest:text-green-300 forest:bg-neutral-900;
 }
 
 *:focus {

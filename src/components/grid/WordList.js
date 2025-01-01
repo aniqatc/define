@@ -15,10 +15,9 @@ function WordList({ words, onSuggest }) {
                             ocean:bg-blue-200
                             ocean:hover:text-blue-900
                             ocean:hover:bg-blue-300
-                            forest:bg-green-200
-                            forest:text-green-700
-                            forest:hover:text-green-900
-                            forest:hover:bg-green-300">
+                            forest:bg-emerald-900
+                            forest:text-emerald-500
+                            forest:hover:bg-emerald-950">
                             {word}
                         </button>
                     </li>

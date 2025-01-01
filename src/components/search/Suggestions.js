@@ -26,7 +26,11 @@ function Suggestions({ onSuggest }) {
                                     forest:hover:bg-green-300
                                     bg-gray-300 px-2 rounded-full
                                     hover:bg-gray-600 hover:text-gray-200
-                                    transition-all">
+                                    transition-all
+                                    forest:bg-emerald-950
+                                    forest:text-emerald-600
+                                    forest:hover:text-green-400
+                                    forest:hover:bg-emerald-900">
                                 {word}
                             </button>
                         </li>

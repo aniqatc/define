@@ -21,7 +21,9 @@ function FontSelect() {
                 dark:text-neutral-100
                 border border-gray-200
                 hover:bg-gray-50
-                dark:hover:bg-gray-700 dark:border-neutral-700"
+                dark:hover:bg-gray-700 dark:border-neutral-700
+                forest:bg-neutral-900 forest:text-neutral-100
+                forest:hover:bg-neutral-800 forest:border-neutral-800"
             >
                 <Select.Value>
                     {fonts.find(f => f.value === font)?.label}
@@ -36,8 +38,12 @@ function FontSelect() {
                     className="overflow-hidden bg-white
                     dark:bg-neutral-900
                     dark:text-neutral-100
+                    dark:border-neutral-700
+                    forest:bg-neutral-900
+                    forest:text-neutral-100
+                    forest:border-neutral-700
                     rounded-md shadow-lg
-                    border border-gray-200 dark:border-neutral-700"
+                    border border-gray-200"
                 >
                     <Select.Viewport>
                         <Select.Group>
@@ -53,6 +59,8 @@ function FontSelect() {
                                         data-[state=checked]:bg-gray-200
                                         dark:data-[highlighted]:bg-gray-700
                                         dark:data-[state=checked]:bg-gray-800
+                                        forest:data-[highlighted]:bg-neutral-800
+                                        forest:data-[state=checked]:bg-gray-950
                                     `}
                                 >
                                     <Select.ItemText>
