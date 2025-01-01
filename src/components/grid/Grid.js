@@ -60,7 +60,7 @@ function Grid({ data, images, onSearch }) {
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, delay: 0.6}}
-                    className={`flex gap-2 ${synonyms.length <= 3 || antonyms.length <= 3 ? 'flex-row' : 'flex-col'}`}
+                    className={`flex flex-wrap sm:flex-nowrap gap-2 ${synonyms.length <= 3 || antonyms.length <= 3 ? 'flex-row' : 'flex-col'}`}
                 >
                     <Related antonyms={antonyms} synonyms={synonyms} onSuggest={onSearch}/>
                 </motion.div>

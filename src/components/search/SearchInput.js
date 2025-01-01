@@ -20,7 +20,8 @@ function SearchInput({ onSearch }) {
                     bg-white border border-gray-200 shadow-sm
                     placeholder:text-sm
                     dark:bg-neutral-900 dark:border-neutral-700 dark:text-gray-300
-                    focus:outline-none focus:ring-1 focus:ring-slate-300"
+                    focus:outline-none focus:ring-1 focus:ring-slate-300
+                    dark:focus:ring-slate-500"
                 placeholder="Type a word to define..."
                 value={word}
                 onChange={(event) => setWord(event.target.value)}
@@ -35,7 +36,7 @@ function SearchInput({ onSearch }) {
                     hover:bg-gray-50
                     dark:hover:bg-neutral-900
                     transition-colors
-                    focus:outline-none focus:ring-1 focus:ring-slate-300"
+                    focus:outline-none focus:ring-1 focus:ring-slate-300 dark:focus:ring-slate-500"
             >
                 Search
                 <Search strokeWidth={1.6} size={18}/>
