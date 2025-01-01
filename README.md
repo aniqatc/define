@@ -4,11 +4,11 @@
 
 <p float="left">
   <a href="https://define.aniqa.dev/"><img src="/public/themes/light.png" width="49%"></a>
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/dark.png" width="49%"></a>
+  <a href="https://define.aniqa.dev/"><img src="/public/themes/ocean.png" width="49%"></a>
 </p>
 
 <p float="left">
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/ocean.png" width="49%"></a>
+  <a href="https://define.aniqa.dev/"><img src="/public/themes/dark.png" width="49%"></a>
   <a href="https://define.aniqa.dev/"><img src="/public/themes/forest.png" width="49%"></a>
 </p>
 
