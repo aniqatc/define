@@ -43,6 +43,7 @@
 ## Features
 - Word lookups with comprehensive definitions and examples
 - Synonyms and antonyms
+- Audio playback of word pronunciations
 - Related images for visual context
 - Multiple theme options (light, dark, ocean, forest)
 - Customizable typography (sans-serif, serif, monospace)
