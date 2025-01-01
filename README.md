@@ -2,15 +2,32 @@
 
 📖 A modern dictionary app built with React that provides word definitions, usage examples, and related imagery, along with customizable themes and typography for a personalized experience.
 
-<p float="left">
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/light.png" width="49%"></a>
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/ocean.png" width="49%"></a>
-</p>
-
-<p float="left">
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/dark.png" width="49%"></a>
-  <a href="https://define.aniqa.dev/"><img src="/public/themes/forest.png" width="49%"></a>
-</p>
+<table>
+  <tr>
+    <td width="50%">
+      <a href="https://define.aniqa.dev/">
+        <img src="/public/themes/light.png" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://define.aniqa.dev/">
+        <img src="/public/themes/dark.png" width="100%">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <a href="https://define.aniqa.dev/">
+        <img src="/public/themes/ocean.png" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://define.aniqa.dev/">
+        <img src="/public/themes/forest.png" width="100%">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Tech
 - React
