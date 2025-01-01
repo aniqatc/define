@@ -6,18 +6,20 @@ import SearchContainer from './components/search/SearchContainer';
 import Grid from './components/grid/Grid';
 import Footer from './components/footer/Footer';
 
-import { fetchWordData } from "./data/api";
+import { fetchWordData, fetchImages } from "./data/api";
 
 function App() {
     const [word, setWord] = useState(null);
     const [data, setData] = useState(null);
+    const [images, setImages] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const result = await fetchWordData("company");
-                setData(result);
-                setWord("company");
+                const wordContent = await fetchWordData("cheese");
+                const imageContent = await fetchImages("cheese");
+                setData(wordContent);
+                setImages(imageContent);
             } catch (error) {
                 console.error(error);
             }
@@ -58,7 +60,7 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.75 }}
                 className="w-full"
             >
-                <Grid data={data} />
+                <Grid data={data} images={images} />
             </motion.div>
 
             <motion.div

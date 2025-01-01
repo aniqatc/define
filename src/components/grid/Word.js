@@ -8,8 +8,6 @@ function Word({ data }) {
         audio.play();
     }
 
-    console.log(data);
-
     return (
         <BaseCard className="px-4 py-3 w-full flex flex-col gap-1">
             <h2 className="text-2xl font-semibold capitalize">{data.word}</h2>
