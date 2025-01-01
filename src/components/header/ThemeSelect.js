@@ -13,11 +13,11 @@ const themes = [
     },
     {
         value: 'ocean',
-        icon: <div className="w-4 h-4 shadow-md rounded-full bg-blue-300 border border-blue-700" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-blue-300 border border-blue-600" />
     },
     {
         value: 'forest',
-        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-500 border border-green-700" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-300 border border-green-500" />
     }
 ];
 

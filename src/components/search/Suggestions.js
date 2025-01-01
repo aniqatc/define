@@ -21,6 +21,9 @@ function Suggestions({ onSuggest }) {
                                     ocean:hover:bg-blue-300
                                     dark:hover:bg-neutral-700
                                     dark:text-neutral-300
+                                    forest:bg-green-200
+                                    forest:hover:text-green-900
+                                    forest:hover:bg-green-300
                                     bg-gray-300 px-2 rounded-full
                                     hover:bg-gray-600 hover:text-gray-200
                                     transition-all">
