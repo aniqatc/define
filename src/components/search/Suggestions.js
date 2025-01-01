@@ -13,7 +13,14 @@ function Suggestions({ onSuggest }) {
                                 ${index === 6 && 'md:block'}
                            `}>
                             <button onClick={() => onSuggest(word)}
-                                className="bg-gray-300 px-2 rounded-full hover:bg-gray-500 hover:text-gray-200 transition-colors">
+                                className="dark:bg-neutral-800
+                                    px-2 rounded-full
+                                    hover:bg-neutral-400
+                                    dark:hover:bg-neutral-700
+                                    dark:text-neutral-300
+                                    bg-gray-300 px-2 rounded-full
+                                    hover:bg-gray-600 hover:text-gray-200
+                                    transition-colors">
                                 {word}
                             </button>
                         </li>

@@ -4,7 +4,17 @@ function WordList({ words, onSuggest }) {
             {words.map((word, index) => (
                     <li key={index}>
                         <button onClick={() => onSuggest(word)}
-                            className="bg-slate-300 px-2 rounded-full hover:bg-slate-500 hover:text-slate-200 transition-colors">
+                            className="bg-slate-300 px-2 rounded-full
+                            hover:bg-slate-400 hover:text-slate-200
+                            transition-colors
+                            dark:bg-gray-700
+                            ocean:bg-blue-200
+                            forest:bg-green-200
+                            pink:bg-pink-200
+                            px-2 rounded-full
+                            hover:bg-slate-500
+                            dark:text-slate-300
+                            dark:hover:bg-gray-600">
                             {word}
                         </button>
                     </li>

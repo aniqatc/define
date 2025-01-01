@@ -44,7 +44,8 @@ module.exports = {
     },
   },
   plugins: [plugin(({ addVariant }) => {
-    addVariant('sepia', '.sepia &')
+    addVariant('forest', '.forest &')
     addVariant('ocean', '.ocean &')
+    addVariant('pink', '.pink &')
   })],
 }

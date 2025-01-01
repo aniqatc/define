@@ -3,7 +3,7 @@ const FontContext = createContext();
 
 function FontProvider({ children }) {
     const [font, setFont] = useState(() => {
-        return localStorage.getItem('font') || 'sans;'
+        return localStorage.getItem('font') || 'sans'
     });
 
     useEffect(() => {

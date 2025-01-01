@@ -53,9 +53,6 @@ function Grid({ data, images, onSearch }) {
                         isDefaultExample={def.isDefaultExample}
                     />
                 ))}
-                {!defsToRender.length && (
-                    <p className="text-sm text-slate-700">No definitions available for this word.</p>
-                )}
             </motion.div>
 
             {antonyms.length > 0 || synonyms.length > 0 ? (

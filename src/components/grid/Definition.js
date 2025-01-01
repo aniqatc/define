@@ -6,8 +6,8 @@ function Definition({ partOfSpeech, definition, example, isDefaultExample }) {
             <p className="font-bold italic">({partOfSpeech})</p>
             <p className="font-light mb-12">{definition}</p>
             <p className={`mt-auto text-sm italic ${isDefaultExample
-                ? 'text-slate-500'
-                : 'text-slate-700'
+                ? 'text-slate-500 dark:text-slate-400'
+                : 'text-slate-700 dark:text-slate-300'
             }`}>{example}</p>
         </BaseCard>
     )
