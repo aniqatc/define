@@ -2,20 +2,18 @@ import BaseCard from './BaseCard';
 import WordList from './WordList';
 
 function Related({ synonyms, antonyms }) {
-    const words = ["whimsical", "sunset", "jubilant", "maelstrom", "serendipidity", "flower"];
-
     return (
         <>
-        {synonyms &&
+        {synonyms.length > 0 &&
             <BaseCard className="px-3 py-3 flex gap-2 items-center">
                 <p className="text-sm text-slate-500 font-semibold">Synonyms: </p>
-                <WordList words={words} />
+                <WordList words={synonyms} />
 
             </BaseCard>}
-            {antonyms &&
+            {antonyms.length > 0 &&
                 <BaseCard className="px-3 py-3 flex gap-2 items-center">
                 <p className="text-sm text-slate-500 font-semibold">Antonyms: </p>
-                <WordList words={words} />
+                <WordList words={antonyms} />
             </BaseCard>}
         </>
     )

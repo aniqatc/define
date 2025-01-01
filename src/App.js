@@ -1,11 +1,31 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 import Header from './components/header/Header';
 import SearchContainer from './components/search/SearchContainer';
 import Grid from './components/grid/Grid';
-import Footer from "./components/footer/Footer"
+import Footer from './components/footer/Footer';
 
-import { motion } from 'framer-motion';
+import { fetchWordData } from "./data/api";
 
 function App() {
+    const [word, setWord] = useState(null);
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const result = await fetchWordData("company");
+                setData(result);
+                setWord("company");
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, [word]);
+
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -38,7 +58,7 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.75 }}
                 className="w-full"
             >
-                <Grid />
+                <Grid data={data} />
             </motion.div>
 
             <motion.div
@@ -47,7 +67,7 @@ function App() {
                 transition={{ duration: 0.5, delay: 1.0 }}
                 className="w-full"
             >
-                <Footer />
+                <Footer source={data?.sourceUrls} />
             </motion.div>
         </motion.div>
     );
