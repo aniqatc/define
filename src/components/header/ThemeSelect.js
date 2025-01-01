@@ -12,16 +12,12 @@ const themes = [
         icon: <div className="w-4 h-4 shadow-md rounded-full bg-gray-600 border border-gray-900" />
     },
     {
-        value: 'pink',
-        icon: <div className="w-4 h-4 shadow-md rounded-full bg-pink-50 border border-pink-200" />
-    },
-    {
         value: 'ocean',
         icon: <div className="w-4 h-4 shadow-md rounded-full bg-blue-300 border border-blue-700" />
     },
     {
         value: 'forest',
-        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-300 border border-green-700" />
+        icon: <div className="w-4 h-4 shadow-md rounded-full bg-green-500 border border-green-700" />
     }
 ];
 

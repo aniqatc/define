@@ -5,7 +5,7 @@ function Gallery({ content }) {
 
     const { photos } = content;
     return (
-        <BaseCard className="p-3 text-xs text-slate-500 flex gap-2">
+        <BaseCard className="p-3 flex gap-2">
             {photos.slice(0, 5).map((image, index) => (
                 <a
                     href={image.url}

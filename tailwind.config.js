@@ -46,6 +46,5 @@ module.exports = {
   plugins: [plugin(({ addVariant }) => {
     addVariant('forest', '.forest &')
     addVariant('ocean', '.ocean &')
-    addVariant('pink', '.pink &')
   })],
 }

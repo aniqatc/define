@@ -7,7 +7,7 @@ function ThemeProvider({ children }) {
     });
 
     useEffect(() => {
-        ['dark', 'forest', 'ocean', 'pink'].forEach(themeClass => {
+        ['dark', 'forest', 'ocean'].forEach(themeClass => {
             document.documentElement.classList.remove(themeClass);
         });
         if (theme !== 'light') {

@@ -8,13 +8,14 @@ function WordList({ words, onSuggest }) {
                             hover:bg-slate-400 hover:text-slate-200
                             transition-colors
                             dark:bg-gray-700
-                            ocean:bg-blue-200
                             forest:bg-green-200
-                            pink:bg-pink-200
                             px-2 rounded-full
                             hover:bg-slate-500
                             dark:text-slate-300
-                            dark:hover:bg-gray-600">
+                            dark:hover:bg-gray-600
+                            ocean:bg-blue-200
+                            ocean:hover:text-blue-900
+                            ocean:hover:bg-blue-300">
                             {word}
                         </button>
                     </li>

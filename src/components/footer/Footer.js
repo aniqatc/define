@@ -9,7 +9,7 @@ function Footer({ source }) {
                     <a href={source[0]}
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="font-medium hover:text-gray-900 dark:hover:text-white transition-colors"
+                       className="font-medium hover:text-gray-900 dark:hover:text-white ocean:text-blue-900 ocean:hover:text-black transition-colors"
                     >
                         {new URL(source[0]).hostname}
                     </a>
@@ -20,7 +20,7 @@ function Footer({ source }) {
                 <a href="https://github.com/aniqatc"
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="ml-0.5 font-medium hover:text-gray-900 dark:hover:text-white transition-colors"
+                   className="ml-0.5 font-medium hover:text-gray-900 dark:hover:text-white ocean:text-blue-900 ocean:hover:text-black transition-colors"
                 >
                     Aniqa
                 </a>
