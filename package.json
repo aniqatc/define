@@ -1,7 +1,7 @@
 {
   "name": "define",
   "version": "0.1.0",
-  "description": "A modern dictionary app with customizable themes for a personalized experience.",
+  "description": "A dictionary app that provides word definitions, usage examples, and related imagery, along with customizable themes and typography for a personalized experience.",
   "private": true,
   "keywords": [
     "dictionary",
