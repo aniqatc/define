@@ -10,7 +10,9 @@ import ErrorCard from './components/error/ErrorCard';
 import { fetchWordData, fetchImages } from './data/api';
 
 function App() {
-  const [word, setWord] = useState(localStorage.getItem('word') || 'hello');
+  const [word, setWord] = useState(() => {
+    return localStorage.getItem('word') || 'hello'
+  });
   const [data, setData] = useState(null);
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
