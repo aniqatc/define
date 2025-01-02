@@ -10,13 +10,14 @@ import ErrorCard from './components/error/ErrorCard'
 import { fetchWordData, fetchImages } from "./data/api";
 
 function App() {
-    const [word, setWord] = useState('hello');
+    const [word, setWord] = useState(localStorage.getItem('word') || "hello");
     const [data, setData] = useState(null);
     const [images, setImages] = useState([]);
     const [error, setError] = useState(null);
 
     function handleSearch(userInput) {
         setWord(userInput);
+        localStorage.setItem('word', userInput);
 
         // Reset states after a new search
         setData(null);
@@ -31,6 +32,7 @@ function App() {
                 throw new Error(`No definition found for the word: "${word}"`);
             }
             setData(data);
+            localStorage.setItem('word', word);
             return fetchImages(word);
         }).then((images) => {
             setImages(images);
