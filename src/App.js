@@ -51,10 +51,10 @@ function App() {
       layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen w-full p-4 flex flex-col justify-center
-             ditems-center max-w-screen-md mx-auto
-            transition-colors duration-200"
+      transition={{ duration: 0.5 }}
+      className="min-h-screen w-full p-4 flex flex-col
+             items-center max-w-screen-md mx-auto
+            transition-colors duration-200 justify-center"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
