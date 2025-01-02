@@ -27,7 +27,7 @@ function Grid({ data, images, onSearch }) {
   const antonyms = data.meanings.flatMap((meaning) => meaning.antonyms || []);
 
   return (
-    <div className="mt-3 w-full flex flex-col gap-2">
+    <main className="mt-3 w-full flex flex-col gap-2">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ function Grid({ data, images, onSearch }) {
           <Gallery content={images} />
         </motion.div>
       )}
-    </div>
+    </main>
   );
 }
 
