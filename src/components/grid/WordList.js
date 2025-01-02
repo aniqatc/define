@@ -1,10 +1,11 @@
 function WordList({ words, onSuggest }) {
-    return (
-        <ul className="text-slate-500 flex gap-2 text-sm flex-wrap">
-            {words.map((word, index) => (
-                    <li key={index}>
-                        <button onClick={() => onSuggest(word)}
-                            className="bg-slate-300 px-2 rounded-full
+  return (
+    <ul className="text-slate-500 flex gap-2 text-sm flex-wrap">
+      {words.map((word, index) => (
+        <li key={index}>
+          <button
+            onClick={() => onSuggest(word)}
+            className="bg-slate-300 px-2 rounded-full
                             hover:bg-slate-400 hover:text-slate-200
                             transition-colors
                             dark:bg-gray-700
@@ -17,13 +18,14 @@ function WordList({ words, onSuggest }) {
                             ocean:hover:bg-blue-300
                             forest:bg-emerald-900
                             forest:text-emerald-500
-                            forest:hover:bg-emerald-950">
-                            {word}
-                        </button>
-                    </li>
-                ))}
-        </ul>
-    )
+                            forest:hover:bg-emerald-950"
+          >
+            {word}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default WordList;

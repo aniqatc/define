@@ -30,6 +30,7 @@
 </table>
 
 ## Tech
+
 - React
 - Tailwind CSS
 - Framer Motion
@@ -37,10 +38,12 @@
 - Lucide React (for icons)
 
 ## API Integrations
+
 - Pexel API for imagery
 - Free Dictionary API for definitions
 
 ## Features
+
 - Word lookups with comprehensive definitions and examples
 - Synonyms and antonyms
 - Audio playback of word pronunciations
@@ -51,13 +54,15 @@
 - Error handling
 
 ## Project Structure
+
 - `components/` - React components organized by feature (`header/`, `search/`, `grid/`, `footer/`, `error/`)
 - `context/` - theme and font context providers
-- `data/` - data fetching logic 
+- `data/` - data fetching logic
 
 ## Key Concepts
 
 #### React:
+
 - Hooks (`useState`, `useEffect`, `useContext`)
 - Context API for theme and font settings
 - Props for component communication
@@ -67,11 +72,13 @@
 - Async data fetching
 
 #### Styling:
+
 - Custom Tailwind variants for theme support (`dark:`, `forest:`, `ocean:`)
 - Framer Motion used for sequential animations during component mounting
 - Responsive design with Tailwind breakpoints
 
 ## Available Scripts
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and utilizes the following scripts:
 
 - `npm start` - Runs the app in development mode at http://localhost:3000
