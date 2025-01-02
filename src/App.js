@@ -14,17 +14,17 @@ function App() {
   const [data, setData] = useState(null);
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
-  const [count, setCounter] = useState(0);
 
   function handleSearch(userInput) {
-    setWord(userInput);
-    setCounter(count + 1);
-    localStorage.setItem('word', userInput);
+    if (userInput !== word) {
+      setWord(userInput);
+      localStorage.setItem('word', userInput);
 
-    // Reset states after a new search
-    setData(null);
-    setImages([]);
-    setError(null);
+      // Reset states after a new search
+      setData(null);
+      setImages([]);
+      setError(null);
+    }
   }
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function App() {
       .catch((error) => {
         setError(error || 'An unexpected error occurred.');
       });
-  }, [word, count]);
+  }, [word]);
 
   return (
     <motion.div
