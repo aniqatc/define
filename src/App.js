@@ -11,7 +11,7 @@ import { fetchWordData, fetchImages } from './data/api';
 
 function App() {
   const [word, setWord] = useState(() => {
-    return localStorage.getItem('word') || 'hello'
+    return localStorage.getItem('word') || 'hello';
   });
   const [data, setData] = useState(null);
   const [images, setImages] = useState([]);
@@ -34,8 +34,11 @@ function App() {
     fetchWordData(word)
       .then((data) => {
         if (!data || !data.meanings || data.meanings.length === 0) {
-          throw new Error(`No definition found for the word: "${word}"`);
+          const error = new Error(`No definition found for the word: "${word}"`);
+          error.code = 'NO_DEFINITION';
+          throw error;
         }
+
         setData(data);
         localStorage.setItem('word', word);
         return fetchImages(word);
@@ -44,7 +47,10 @@ function App() {
         setImages(images);
       })
       .catch((error) => {
-        setError(error || 'An unexpected error occurred.');
+        setError({
+          code: error.code || 'UNEXPECTED_ERROR',
+          message: error.message || 'An unexpected error has occurred.',
+        });
       });
   }, [word]);
 
@@ -80,7 +86,7 @@ function App() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="w-full"
         >
           <ErrorCard error={error} />
