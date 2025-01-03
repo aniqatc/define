@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+import { Grid } from './components/grid';
 import Header from './components/header/Header';
 import SearchContainer from './components/search/SearchContainer';
-import Grid from './components/grid/Grid';
 import Footer from './components/footer/Footer';
 import ErrorCard from './components/error/ErrorCard';
 

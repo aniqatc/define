@@ -1,5 +1,5 @@
 import { TriangleAlert } from 'lucide-react';
-import BaseCard from '../grid/BaseCard';
+import { BaseCard } from '../grid';
 
 function ErrorCard({ error }) {
   return (
