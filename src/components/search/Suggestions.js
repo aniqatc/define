@@ -2,44 +2,44 @@ import { motion } from 'framer-motion';
 
 function Suggestions({ onSuggest }) {
   return (
-    <div className="mt-3 mx-1 flex gap-2 items-center">
+    <div className="mt-3 mx-1 flex gap-1.5 items-center">
       <p className="text-slate-400 text-xs shrink-0">Suggestions:</p>
       <motion.ul
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { delayChildren: 0.1, staggerChildren: 0.2 },
+            transition: { delayChildren: 0.5, staggerChildren: 0.15 },
           },
         }}
         initial="hidden"
         animate="visible"
-        className="text-gray-500 flex gap-2 text-sm"
+        className="text-gray-500 flex gap-2 text-sm overflow-hidden"
       >
         {['book', 'flower', 'sunset', 'jubilant', 'love', 'joy', 'twilight'].map((word, index) => (
           <motion.li
             variants={{
               hidden: {
                 opacity: 0,
-                scaleX: 0.25,
+                scale: 0.25,
                 transformOrigin: 'left',
               },
               visible: {
                 opacity: 1,
-                scaleX: 1,
+                scale: 1,
                 transformOrigin: 'left',
                 transition: {
                   type: 'spring',
                   stiffness: 200,
                   damping: 25, // slight bounce
-                  duration: 0.35,
+                  duration: 0.3,
                 },
               },
             }}
             key={index}
             className={`
-                                ${index >= 3 ? 'hidden' : ''}          
-                                ${index === 3 ? 'xs:block' : ''} 
+                                ${index >= 3 ? 'hidden' : ''}       
+                                ${index === 3 ? 'min-[382px]:block' : ''}     
                                 ${index === 4 ? 'xs:block' : ''}      
                                 ${index === 5 ? 'sm:block' : ''}      
                                 ${index === 6 ? 'md:block' : ''}
