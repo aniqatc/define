@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Grid } from './components/grid';
 import Header from './components/header/Header';
@@ -82,36 +82,55 @@ function App() {
         <SearchContainer onSearch={handleSearch} />
       </motion.div>
 
-      {error && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="w-full"
-        >
-          <ErrorCard error={error} />
-        </motion.div>
-      )}
-
-      {word && !error && data && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.75 }}
-          className="w-full"
-        >
-          <Grid data={data} images={images} onSearch={handleSearch} />
-        </motion.div>
-      )}
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.0 }}
-        className="w-full"
-      >
-        <Footer source={data?.sourceUrls} />
-      </motion.div>
+      <AnimatePresence mode="wait">
+        {error ? (
+          <>
+            <motion.div
+              key="error"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.75 }}
+              className="w-full"
+            >
+              <ErrorCard error={error} />
+            </motion.div>
+            <motion.div
+              key="error-footer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="w-full"
+            >
+              <Footer source={data?.sourceUrls} />
+            </motion.div>
+          </>
+        ) : word && data && (
+          <>
+            <motion.div
+              key="grid"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.75 }}
+              className="w-full"
+            >
+              <Grid data={data} images={images} onSearch={handleSearch} />
+            </motion.div>
+            <motion.div
+              key="grid-footer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="w-full"
+            >
+              <Footer source={data?.sourceUrls} />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
