@@ -1,7 +1,7 @@
 import BaseCard from './BaseCard';
 
 function Gallery({ content }) {
-  if (content.total_results === 0) return;
+  if (content.total_results < 3) return;
 
   const { photos } = content;
   return (

@@ -16,38 +16,40 @@ function Suggestions({ onSuggest }) {
         animate="visible"
         className="text-gray-500 flex gap-2 text-sm overflow-hidden"
       >
-        {['book', 'flower', 'sunset', 'jubilant', 'love', 'joy', 'twilight'].map((word, index) => (
-          <motion.li
-            variants={{
-              hidden: {
-                opacity: 0,
-                scale: 0.25,
-                transformOrigin: 'left',
-              },
-              visible: {
-                opacity: 1,
-                scale: 1,
-                transformOrigin: 'left',
-                transition: {
-                  type: 'spring',
-                  stiffness: 200,
-                  damping: 25, // slight bounce
-                  duration: 0.3,
+        {['book', 'flower', 'sunset', 'love', 'joy', 'zephyr', 'twilight', 'ethereal'].map(
+          (word, index) => (
+            <motion.li
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  scale: 0.25,
+                  transformOrigin: 'left',
                 },
-              },
-            }}
-            key={index}
-            className={`
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transformOrigin: 'left',
+                  transition: {
+                    type: 'spring',
+                    stiffness: 200,
+                    damping: 25, // slight bounce
+                    duration: 0.3,
+                  },
+                },
+              }}
+              key={index}
+              className={`
                                 ${index >= 3 ? 'hidden' : ''}       
-                                ${index === 3 ? 'min-[382px]:block' : ''}     
-                                ${index === 4 ? 'xs:block' : ''}      
-                                ${index === 5 ? 'sm:block' : ''}      
-                                ${index === 6 ? 'md:block' : ''}
+                                ${index === 3 ? 'min-[400px]:block' : ''}     
+                                ${index === 4 ? 'min-[450px]:block' : ''}      
+                                ${index === 5 ? 'xs:block' : ''}      
+                                ${index === 6 ? 'sm:block' : ''}
+                                ${index === 7 ? 'md:block' : ''}
                            `}
-          >
-            <button
-              onClick={() => onSuggest(word)}
-              className="dark:bg-neutral-800
+            >
+              <button
+                onClick={() => onSuggest(word)}
+                className="dark:bg-neutral-800
                                     px-2 rounded-full
                                     hover:bg-neutral-400
                                     ocean:bg-blue-200
@@ -62,11 +64,12 @@ function Suggestions({ onSuggest }) {
                                     forest:text-emerald-600
                                     forest:hover:text-green-400
                                     forest:hover:bg-emerald-900"
-            >
-              {word}
-            </button>
-          </motion.li>
-        ))}
+              >
+                {word}
+              </button>
+            </motion.li>
+          )
+        )}
       </motion.ul>
     </div>
   );
