@@ -2,7 +2,7 @@ import { UserRound, AlignJustify } from 'lucide-react';
 
 function Footer({ source }) {
   return (
-    <footer className="text-gray-500 dark:text-gray-300 forest:text-gray-300 flex flex-wrap gap-1 justify-between w-full px-2 mt-3 text-sm opacity-80">
+    <footer className="text-gray-500 dark:text-gray-300 forest:text-gray-300 flex flex-wrap gap-1 justify-between w-full px-2 pb-4 mt-3 text-sm opacity-80">
       {source && source.length > 0 && (
         <p className="flex items-center gap-1 text-sm">
           <AlignJustify size={16} strokeWidth={2} className="inline-block" /> Source:

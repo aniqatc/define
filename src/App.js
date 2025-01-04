@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Grid } from './components/grid';
 import Header from './components/header/Header';
@@ -56,37 +56,35 @@ function App() {
 
   return (
     <motion.div
-      layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen w-full p-4 flex flex-col
+      className={`min-h-screen w-full px-5 my-3 flex flex-col
              items-center max-w-screen-md mx-auto
-            transition-colors duration-200 justify-center"
+            transition-colors duration-200 sm:py-8`}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.25 }}
-        className="w-full"
-      >
-        <Header />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="w-full"
-      >
-        <SearchContainer onSearch={handleSearch} />
-      </motion.div>
-
       <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="w-full"
+        >
+          <Header />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="w-full"
+        >
+          <SearchContainer onSearch={handleSearch} />
+        </motion.div>
+
         {error ? (
           <>
             <motion.div
-              key="error"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -96,7 +94,6 @@ function App() {
               <ErrorCard error={error} />
             </motion.div>
             <motion.div
-              key="error-footer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -106,29 +103,30 @@ function App() {
               <Footer source={data?.sourceUrls} />
             </motion.div>
           </>
-        ) : word && data && (
-          <>
-            <motion.div
-              key="grid"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.75 }}
-              className="w-full"
-            >
-              <Grid data={data} images={images} onSearch={handleSearch} />
-            </motion.div>
-            <motion.div
-              key="grid-footer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="w-full"
-            >
-              <Footer source={data?.sourceUrls} />
-            </motion.div>
-          </>
+        ) : (
+          word &&
+          data && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.75 }}
+                className="w-full"
+              >
+                <Grid data={data} images={images} onSearch={handleSearch} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                className="w-full"
+              >
+                <Footer source={data?.sourceUrls} />
+              </motion.div>
+            </>
+          )
         )}
       </AnimatePresence>
     </motion.div>
