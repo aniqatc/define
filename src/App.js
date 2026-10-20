@@ -41,10 +41,11 @@ function App() {
 
         setData(data);
         localStorage.setItem('word', word);
-        return fetchImages(word);
-      })
-      .then((images) => {
-        setImages(images);
+
+        // Images are optional: if they fail, keep the definition on screen.
+        fetchImages(word)
+          .then((images) => setImages(images))
+          .catch(() => setImages([]));
       })
       .catch((error) => {
         setError({
