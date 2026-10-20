@@ -6,9 +6,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing "word" query parameter.' });
   }
 
-  const key = process.env.SHECODES_API_KEY;
+  // Server-side only. Don't reference this from src/ — CRA would inline it
+  // into the public bundle because of the REACT_APP_ prefix.
+  const key = process.env.REACT_APP_API_KEY;
   if (!key) {
-    return res.status(500).json({ error: 'SHECODES_API_KEY is not set.' });
+    return res.status(500).json({ error: 'REACT_APP_API_KEY is not set.' });
   }
 
   try {
