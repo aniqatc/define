@@ -8,7 +8,14 @@ export default async function handler(req, res) {
 
   try {
     const upstream = await fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,
+      {
+        // The API rejects requests with Node's default "node" user agent (403).
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; define.aniqa.dev)',
+          Accept: 'application/json',
+        },
+      }
     );
 
     if (upstream.status === 404) {
